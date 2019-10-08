@@ -11,10 +11,8 @@ import java.util.stream.Stream;
 public class Words {
 
     public static Function<String, Stream<String>> fromSentence() {
-        return s -> {
-            return Arrays.stream(s.split(" "))
-                .map(remove(",", "\\."));
-        };
+        return s -> Arrays.stream(s.split(" "))
+            .map(remove(",", "\\."));
     }
 
     private static Function<String, String> remove(String... toRemove) {
@@ -39,6 +37,6 @@ public class Words {
     }
 
     public static Predicate<String> endingWIth(String start) {
-        return s -> s.startsWith(start);
+        return s -> s.endsWith(start);
     }
 }

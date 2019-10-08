@@ -24,8 +24,8 @@ public class SortExamples {
 
         Stream.generate(generator::newPerson)
                 .limit(20)
-                .sorted(comparing(Person::getFullName)
-                        .thenComparing(Person::getLastName)
+                .sorted(comparing(Person::getLastName)
+                        .thenComparing(Person::getFirstName)
                         .thenComparingInt(Person::getAge))
                 .collect(Collectors.toList());
     }

@@ -10,7 +10,7 @@ import java.util.Optional;
 public class OptionalExample {
     public static void main(String[] args) {
         System.out.println(
-            Optional.of(new Person("Joe", "Maxwell", 45))
+            Optional.ofNullable(new Person("Joe", "Maxwell", 45))
                 .map(Person::getFirstName)
                 .orElse("None")
         );

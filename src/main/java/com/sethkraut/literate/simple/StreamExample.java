@@ -15,6 +15,7 @@ public class StreamExample {
 
         System.out.println(
                 Stream.generate(randomPerson::newPerson)
+                        .skip(5)
                         .limit(6)
                         .filter(Person::isAdult)
                         .map(Person::getFirstName)
